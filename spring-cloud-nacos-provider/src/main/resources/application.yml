@@ -1,0 +1,16 @@
+server:
+  port: 16012
+
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 118.25.36.41:8848
+  profiles:
+    active: dev
+
+test:
+  config:
+    refresh: true
+
