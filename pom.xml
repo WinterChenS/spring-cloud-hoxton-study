@@ -13,6 +13,12 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-cloud-hoxton-study</name>
     <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>spring-cloud-nacos-consumer</module>
+        <module>spring-cloud-nacos-provider</module>
+    </modules>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -28,14 +34,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
