@@ -1,7 +1,9 @@
 package com.winterchen.nacos.rest;
 
+import com.winterchen.nacos.api.NacosProviderClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -21,6 +23,10 @@ public class NacosController {
 
     private final RestTemplate restTemplate;
 
+
+    @Autowired
+    private NacosProviderClient nacosProviderClient;
+
     @Autowired
     public NacosController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -36,6 +42,21 @@ public class NacosController {
     @GetMapping("/echo/{str}")
     public String echo(@PathVariable String str) {
         return restTemplate.getForObject("http://winter-nacos-provider/nacos/echo/" + str, String.class);
+    }
+
+    @GetMapping("/feign-test/{str}")
+    public String feignTest(@PathVariable String str) {
+        return nacosProviderClient.echo2(str);
+    }
+
+    @GetMapping("/ribbon-test")
+    public String ribbonTest1() {
+        return nacosProviderClient.ribbonTest();
+    }
+
+    @GetMapping("/hystrix-test")
+    public String hystrixTest(){
+        return nacosProviderClient.hystrixTest();
     }
 
 }

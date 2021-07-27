@@ -6,5 +6,7 @@ spring:
         file-extension: yaml
   application:
     name: winter-nacos-consumer
+  profiles:
+    active: dev
 
 
