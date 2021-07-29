@@ -1,5 +1,5 @@
 server:
-  port: 16013
+  port: 16012
 
 
 spring:
@@ -12,3 +12,6 @@ spring:
 test:
   config:
     refresh: false
+
+swagger:
+    enable: true

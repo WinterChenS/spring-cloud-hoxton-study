@@ -1,0 +1,29 @@
+server:
+  port: 15010
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 118.25.36.41:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+      routes:
+        - id: provider
+          uri: lb://winter-nacos-provider
+          predicates:
+            - Path=/provider/**
+          filters:
+            - StripPrefix=1 #StripPrefix=1就代表截取路径的个数为1，比如前端过来请求/test/good/1/view，匹配成功后，路由到后端的请求路径就会变成http://localhost:8888/good/1/view
+        - id: consumer
+          uri: lb://winter-nacos-consumer
+          predicates:
+            - Path=/consumer/**
+          filters:
+            - StripPrefix=1
+
+  application:
+    name: winter-gateway
