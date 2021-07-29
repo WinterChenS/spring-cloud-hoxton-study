@@ -1,0 +1,41 @@
+server:
+  port: 18080
+
+spring:
+  application:
+    name: auth
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 118.25.36.41:8848
+  redis:
+    host: localhost
+    port: 6379
+    password: root
+    timeout: 10000
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mybatis-plus-test?autoReconnect=true&useSSL=false&characterEncoding=utf-8&useUnicode=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 初始化大小，最小，最大
+    initialSize: 5
+    minIdle: 5
+    maxActive: 100
+    maxWait: 60000
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计
+    # 监控统计用的filter:stat日志用的filter:log4j防御sql注入的filter:wall
+    filters: stat
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=1000
+
+
