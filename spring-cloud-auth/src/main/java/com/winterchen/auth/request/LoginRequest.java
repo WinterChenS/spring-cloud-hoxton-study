@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
- * @author CENTURY
+ * @author winterchen
  * @version 1.0
  * @date 2021/7/29 13:55
  **/

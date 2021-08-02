@@ -30,6 +30,11 @@ spring:
             - Path=/auth/**
           filters:
             - StripPrefix=1
+    sentinel:
+      transport:
+        port: 15000
+        dashboard: 127.0.0.1:8748
+
   redis:
     host: localhost
     port: 6379

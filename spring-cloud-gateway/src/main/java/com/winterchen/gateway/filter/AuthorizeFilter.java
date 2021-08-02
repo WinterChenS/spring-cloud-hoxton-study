@@ -101,8 +101,6 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
                     log.info("userId:{}", userId);
                     Map<String, Object> map = Maps.newHashMapWithExpectedSize(1);
                     map.put(DefaultConstants.USERID,userId.toString());
-                    String token = JwtUtil.createToken(DefaultConstants.USER, map, DefaultConstants.SECRET_KEY);
-                    response.getHeaders().add(DefaultConstants.TOKEN, token);
 
                     UserInfoEntity userInfo = userRedisCollection.getAuthUserInfoAndCache(userId);
                     //判断是否
@@ -110,6 +108,11 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
                         response.setStatusCode(HttpStatus.UNAUTHORIZED);
                         return getVoidMono(response, ResultCodeEnum.UNAUTHORIZED, "未登录");
                     }
+
+                    String token = JwtUtil.createToken(DefaultConstants.USER, map, DefaultConstants.SECRET_KEY);
+                    response.getHeaders().add(DefaultConstants.TOKEN, token);
+
+
                     mutableReq = request.mutate().header(DefaultConstants.USER_ID, String.valueOf(userId))
                             .header(DefaultConstants.IP_ADDRESS, getIpAddress(request))
                             .build();

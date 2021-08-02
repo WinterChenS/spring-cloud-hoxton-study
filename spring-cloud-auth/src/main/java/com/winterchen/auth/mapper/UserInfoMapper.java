@@ -5,7 +5,7 @@ import com.winterchen.auth.entity.UserInfoEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * @author CENTURY
+ * @author winterchen
  * @version 1.0
  * @date 2021/7/29 13:52
  **/
