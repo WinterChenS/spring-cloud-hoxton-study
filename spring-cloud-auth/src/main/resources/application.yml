@@ -41,5 +41,15 @@ spring:
     filters: stat
     # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=1000
+  zipkin:
+    sender:
+      type: web
+    base-url: http://localhost:9411/
+    service:
+      name: auth
+
+  sleuth:
+    sampler:
+      probability: 1 #设置采样率默认为 0.1 注意之前的版本是percentage 新版本中更换为 probability
 
 
