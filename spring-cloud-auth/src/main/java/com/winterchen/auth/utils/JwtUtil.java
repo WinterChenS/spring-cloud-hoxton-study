@@ -24,7 +24,7 @@ import java.util.Map;
  * </ol>
  *
  * @Description: JWT校验工具类
- * @Author: zhaoshijie
+ * @Author: winterchen
  * @Date: 2019-06-12
  *
  */
@@ -38,7 +38,7 @@ public class JwtUtil {
     /**
       *
       * @Description: 创建token
-      * @Author: zhaoshijie
+      * @Author: winterchen
       * @Date: 2019-06-12
       *
     */
@@ -93,7 +93,7 @@ public class JwtUtil {
     /**
      *
      * @Description: 创建token
-     * @Author: zhaoshijie
+     * @Author: winterchen
      * @Date: 2019-06-12
      *
      */
@@ -117,7 +117,7 @@ public class JwtUtil {
     /**
      *
      * @Description: 创建token
-     * @Author: zhaoshijie
+     * @Author: winterchen
      * @Date: 2019-06-12
      *
      */

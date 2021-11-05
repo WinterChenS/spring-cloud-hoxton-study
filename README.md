@@ -1,7 +1,7 @@
 
 ## 系列教程
 
-- [SpringCloud系列教程(一)开篇](doc\SpringCloud系列教程(一)开篇.md)
+- [SpringCloud系列教程(一)开篇](doc/SpringCloud系列教程(一)开篇.md)
 - [SpringCloud系列教程(二)之Nacos](doc/SpringCloud系列教程(二)之Nacos.md)
 - [SpringCloud系列教程(三)之Open Feign](doc/SpringCloud系列教程(三)之Open%20Feign.md)
 - [SpringCloud系列教程(四)之SpringCloud Gateway](doc/SpringCloud系列教程(四)之SpringCloud%20Gateway.md)
