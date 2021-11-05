@@ -20,6 +20,8 @@
         <module>spring-cloud-nacos-provider</module>
         <module>spring-cloud-auth</module>
         <module>spring-cloud-gateway</module>
+        <module>spring-cloud-nacos-seata-server-a</module>
+        <module>spring-cloud-nacos-seata-server-b</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

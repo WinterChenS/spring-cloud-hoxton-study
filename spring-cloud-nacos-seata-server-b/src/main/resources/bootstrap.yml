@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 118.25.36.41:8848
+        file-extension: yaml
+  application:
+    name: spring-cloud-nacos-seata-server-b
+  profiles:
+    active: dev
+
+
