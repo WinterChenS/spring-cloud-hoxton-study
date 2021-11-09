@@ -20,8 +20,8 @@
         <module>spring-cloud-nacos-provider</module>
         <module>spring-cloud-auth</module>
         <module>spring-cloud-gateway</module>
-        <module>spring-cloud-nacos-seata-server-a</module>
-        <module>spring-cloud-nacos-seata-server-b</module>
+        <module>order-server</module>
+        <module>stock-server</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
@@ -29,6 +29,10 @@
         <spring-boot.version>2.2.13.RELEASE</spring-boot.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
         <knife4j.version>3.0.3</knife4j.version>
+        <mybatis-plus-version>3.4.3.4</mybatis-plus-version>
+        <druid.version>1.2.6</druid.version>
+        <mysql.version>8.0.16</mysql.version>
+        <lombok.version>1.18.8</lombok.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -63,6 +67,27 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-version}</version>
+            </dependency>
+
+
+            <!-- 提供mysql驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!-- lombook -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
 
         </dependencies>

@@ -21,7 +21,7 @@ public class UserInfoEntity implements Serializable {
 
     private static final long serialVersionUID = 92049696933194360L;
 
-    @TableId(value="id" ,type = IdType.ID_WORKER)
+    @TableId(value="id" ,type = IdType.AUTO)
     /** 自增主键 */
     @TableField("id")
     private Long id;

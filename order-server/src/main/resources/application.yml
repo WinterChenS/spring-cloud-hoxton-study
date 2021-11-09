@@ -1,10 +1,8 @@
 server:
-  port: 18080
+  port: 16013
+
 
 spring:
-  application:
-    name: auth
-
   cloud:
     nacos:
       discovery:
@@ -13,21 +11,20 @@ spring:
       transport:
         port: 18763
         dashboard: 127.0.0.1:8748
-  redis:
-    host: localhost
-    port: 6379
-    password: root
-    timeout: 10000
-    database: 0
-    lettuce:
-      pool:
-        max-active: 8
-        max-wait: -1
-        max-idle: 8
-        min-idle: 0
+  zipkin:
+    sender:
+      type: web
+    base-url: http://localhost:9411/
+    service:
+      name: provider
+
+  sleuth:
+    sampler:
+      probability: 1 #设置采样率默认为 0.1 注意之前的版本是percentage 新版本中更换为 probability
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/mybatis-plus-test?autoReconnect=true&useSSL=false&characterEncoding=utf-8&useUnicode=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:3306/seata_order?autoReconnect=true&useSSL=false&characterEncoding=utf-8&useUnicode=true&serverTimezone=Asia/Shanghai
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
@@ -41,15 +38,22 @@ spring:
     filters: stat
     # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=1000
-  zipkin:
-    sender:
-      type: web
-    base-url: http://localhost:9411/
-    service:
-      name: auth
-
-  sleuth:
-    sampler:
-      probability: 1 #设置采样率默认为 0.1 注意之前的版本是percentage 新版本中更换为 probability
 
 
+feign:
+  sentinel:
+    enabled: true
+
+test:
+  config:
+    refresh: false
+
+swagger:
+    enable: true
+
+logging:
+  level:
+    io:
+      seata: debug
+seata:
+  tx-service-group: my_test_tx_group
