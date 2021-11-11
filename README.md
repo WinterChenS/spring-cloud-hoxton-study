@@ -10,3 +10,5 @@
 - [SpringCloud系列教程(七)之使用Spring Cloud Sleuth+Zipkin实现链](doc/SpringCloud系列教程(七)之使用Spring%20Cloud%20Sleuth+Zipkin实现链.md)
 - [SpringCloud系列教程(八)之整合seata分布式事务](doc/SpringCloud系列教程(八)之整合seata分布式事务.md)
 
+## 资源
+本文涉及的docker-compose以及sql文件在[files](files/)文件夹下
