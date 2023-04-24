@@ -1,4 +1,4 @@
-67# SpringCloud系列教程(二)之Nacos | 8月更文挑战
+# SpringCloud系列教程(二)之Nacos | 8月更文挑战
 
 > 阅读提醒：
 1. 本文面向的是有一定springboot基础者
